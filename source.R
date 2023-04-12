@@ -1,12 +1,12 @@
 ##Put code here 
 #
-crime <- read.csv("crimedata.years.csv")
-pop <- read.csv("pop.csv")
+crime <- read.csv("./datasets/crimedata.years.csv")
+pop <- read.csv("./datasets/pop.csv")
 pop <- na.omit(pop)
-survey <- read_csv("survey.csv")
-census_data = read_rds("census_data.rds")
-drive <- read.csv("car_data.csv")
-gender_survey = read.csv("gender_survey.csv")
+survey <- read_csv("./datasets/survey.csv")
+census_data = read_rds("./datasets/census_data.rds")
+drive <- read.csv("./datasets/car_data.csv")
+gender_survey = read.csv("./datasets/gender_survey.csv")
 
 # Because theres no easy prebuilt way to flip  colours in leaftlet legend. From: https://stackoverflow.com/questions/40276569/reverse-order-in-r-leaflet-continuous-legend
 addLegend_decreasing <- function (map, position = c("topright", "bottomright", "bottomleft","topleft"),
