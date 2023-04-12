@@ -10,8 +10,7 @@ module.exports = {
     },
     white: {
       1: '#FFFFFF',
-      2: '#F2F2F2',
-      3: '#FAFAFA'
+      2: '#F2F2F2'
     },
      blue: {
       1: '#3854F2',

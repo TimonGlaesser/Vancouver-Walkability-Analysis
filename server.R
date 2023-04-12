@@ -18,45 +18,22 @@ server <- function(input, output) {
                            decreasing = TRUE)
   })
   
-  v <- reactiveValues(data = NULL)
-  
-  observeEvent(input$map_1_button, {
-    v$data <- NULL
-  }) 
-  
-  observeEvent(input$map_2_button, {
-    v$data <- runif(100)
+  output$collision_map_2 <- renderLeaflet({
+    census_data$relative_crash_count = census_data$relative_crash_count*5000
+    pal = colorNumeric("magma",domain = census_data$relative_crash_count)
+    census_data %>%
+      leaflet() %>%
+      addProviderTiles("CartoDB") %>%
+      addPolygons(weight = 1,
+                  color = ~pal(census_data$relative_crash_count),
+                  stroke = FALSE,
+                  fillOpacity = .75,
+                  label = ~census_data$relative_crash_count) %>%
+      addLegend_decreasing("bottomright", pal = pal, values = ~relative_crash_count,
+                           title = "Collisions",
+                           opacity = 0.8,
+                           decreasing = TRUE)
   })
-  
-  output$collision_map <- renderLeaflet({
-      if (is.null(v$data)) {
-        
-        census_data$relative_crash_count = census_data$relative_crash_count*5000
-        pal = colorNumeric("magma",domain = census_data$relative_crash_count)
-        census_data %>%
-          leaflet() %>%
-          addProviderTiles("CartoDB") %>%
-          addPolygons(weight = 1,
-                      color = ~pal(census_data$relative_crash_count),
-                      stroke = FALSE,
-                      fillOpacity = .75,
-                      label = ~census_data$relative_crash_count) %>%
-          addLegend_decreasing("bottomright", pal = pal, values = ~relative_crash_count,
-                               title = "Collisions",
-                               opacity = 0.8,
-                               decreasing = TRUE)
-        
-      } else {
-        
-        crash %>%
-          dplyr::filter(YEAR %in% c(2022)) %>%
-          filter(y != 0.00000)%>%
-          leaflet() %>%
-          addProviderTiles(providers$CartoDB.Positron) %>%
-          addCircleMarkers(lng = ~as.numeric(x), lat = ~as.numeric(y), radius = 2,
-                           clusterOptions = markerClusterOptions())
-      }
-    })
   
   output$population_proj_map <- renderLeaflet({
     pal = colorNumeric("magma",domain = census_data$pred_change_pop40)
@@ -72,6 +49,16 @@ server <- function(input, output) {
                            title = "% Growth",
                            opacity = 0.8,
                            decreasing = TRUE)
+  })
+  
+  output$collision_map <- renderLeaflet({
+    collision.map <- crash %>%
+      dplyr::filter(YEAR %in% c(2022)) %>%
+      filter(y != 0.00000)%>%
+      leaflet() %>%
+      addProviderTiles(providers$CartoDB.Positron) %>%
+      addCircleMarkers(lng = ~as.numeric(x), lat = ~as.numeric(y), radius = 2,
+                       clusterOptions = markerClusterOptions())
   })
   
   output$crime_map <- renderLeaflet({
@@ -156,5 +143,7 @@ server <- function(input, output) {
               panel.grid = element_blank())  # Removed gridlines
     }
   })
+  
+  
   
 }

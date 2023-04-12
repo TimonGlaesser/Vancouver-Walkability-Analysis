@@ -5,13 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="tailwind.css">
     <!-- import fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">  
-     {{ headContent() }}
+    <!-- {{ headContent() }} -->
 </head>
 
 <body class="text-gray-1 font-poppins">
@@ -204,8 +203,8 @@
               <div class="overflow-hidden rounded-lg bg-blue-2 shadow p-2 map_height">
                 <div class="">
                   <!--  Your Content -->
-                  <!-- {{ walk_score_map }} -->
-                    <img src="./images/walk_score_map.png">
+                  {{ walk_score_map }}
+                   <!-- <img src="./images/walk_score_map.png"> -->
                 </div>
               </div>
           </div>
@@ -269,67 +268,35 @@
 <!---------------------- SECTION: COLLISION MAP ---------------------->
 
 <section id="5">
-  <div x-data="{ activeTab: 'census' }" class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+  <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 class="font-bold text-3xl text-center py-20">
-              Vehicle Collisions  Across the City of Vancouver in 2022
+              Vehicle Collisions per 5000 People Across the City of Vancouver
           </h1>
       <!-- Main 3 column grid -->
-      <div class="grid grid-cols-1 items-start lg:grid-cols-3">
+      <div class="grid grid-cols-1 items-start lg:grid-cols-3 gap-2">
         <!-- Left column -->
-        <div class="grid grid-cols-1 lg:col-span-2">
-          <div class="overflow-hidden rounded-l-lg bg-blue-2 shadow p-2 map_height">
-
-               <div class="bg-blue-1"> 
-                {{ collision_map }}     
-                <!--<img src="./images/collision_map_2.png">-->
-               </div>
-
-
-          </div>
+        <div class="grid grid-cols-1 gap-0 lg:col-span-2">
+            <div class="overflow-hidden rounded-lg bg-blue-2 shadow p-2 map_height">
+              <div class="">
+                <!--  Your Content -->
+                {{ collision_map_2 }}
+               <!-- <img src="./images/collision_map_2.png"> -->
+              </div>
+            </div>
         </div>
-        
+  
         <!-- Right column -->
-        <div class="grid grid-cols-1">
-
-         <a x-on:click.prevent="activeTab = 'census'" :class="{ 'button-active': activeTab === 'census' }" href="#census" 
-         class="button overflow-hidden rounded-r-lg h-52">
-
-              <div class="p-8 text-lg action-button cursor-pointer" id="map_1_button"> 
-                <span class="font-semibold">Census Tract Collision Map</span><br>  
-                <p class="text-gray-1 mt-2 text-base">
-                  Static overview showing number of collisions per 5000 people in each census tract.
-                </p>       
-              </div>
-
-          </a>
-
-          <a x-on:click.prevent="activeTab = 'cluster'" :class="{ 'button-active': activeTab === 'cluster' }" href="#cluster" 
-          class="button overflow-hidden rounded-r-lg h-52">  
-
-              <div class="p-8 text-lg action-button cursor-pointer" id="map_2_button">
-                <span class="font-semibold">Clustered Collision Map</span><br>
-                <p class="text-gray-1 mt-2 text-base">
-                  Interactive clustering of absolute crash counts and their locations.<br> Try zooming in!
-                </p>
-              </div>
-
-          </a>
-
+        <div class="grid grid-cols-1 gap-4">
+            <div class="overflow-hidden rounded-lg bg-white-1 map_height">
+              <p class="p-8 text-lg">
+                For a city to be walkable, pedestrians need to feel safe throughout their commute.
+                 Measures such as traffic calming, wide sidewalks and controlled intersections will
+                 help to reduce the frequency of vehicle collisions.              
+              </p>
+            </div>
         </div>
       </div>
-
-      <div class="w-full px-0 mt-16">
-        <div class="p-6 bg-white-2 rounded-lg mx-28">
-          <p>
-            For a city to be walkable, pedestrians need to feel safe throughout their commute.
-            Measures such as traffic calming, wide sidewalks and controlled intersections will
-            help to reduce the frequency of vehicle collisions.  
-          </p>
-        </div>
-      </div>
-
-      
-    </div>
+  </div>
   </section>
 
 <!---------------------- SECTION: PERSONAL SAFETY PLOTS 1 ---------------------->

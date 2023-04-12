@@ -47,8 +47,3 @@ html, body {
 .w-45 {
     width: 1.125rem/* 16px */;
 }
-
-.button-active {
-    background-color: #F2F2F2;
-    color: #3876F2;
-}
