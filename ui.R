@@ -40,9 +40,7 @@ ui = shiny::htmlTemplate(
   
   collision_map = leafletOutput(outputId = "collision_map") %>% 
     withSpinner(color="#0dc5c1"),
-  
-  collision_map_2 = leafletOutput(outputId = "collision_map_2") %>% 
-    withSpinner(color="#0dc5c1"),
+
   
   crime_map = leafletOutput(outputId = "crime_map") %>% 
     withSpinner(color="#0dc5c1"),
@@ -75,4 +73,8 @@ ui = shiny::htmlTemplate(
   
   city_plot = plotOutput("city_plot") %>% 
     withSpinner(color="#0dc5c1"),
+  
+  map_1_button = actionButton("map_1_button", "Uniform"),
+  
+  map_2_button = actionButton("map_2_button", "Normal")
 )
