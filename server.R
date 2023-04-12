@@ -114,7 +114,6 @@ server <- function(input, output) {
       geom_point(aes(color = walk_score > 75)) +
       scale_color_manual(values = c("#2E343F","#3876F2"), labels = c("Below 75", "Above 75")) +
       geom_smooth(se = FALSE, color = "#949494") +
-      ggtitle("Walkability and Number of People Walking by Census Tract") +
       theme_classic() +
       theme(legend.position = "none") +
       xlab("Walk Score") +

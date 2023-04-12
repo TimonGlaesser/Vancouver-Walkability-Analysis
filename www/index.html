@@ -358,18 +358,21 @@
         </div>
         <!-- Right column -->
         <div class="grid grid-cols-1 gap-4">
-            <div class="overflow-hidden rounded-lg bg-white-1 map_height">
-              <p class="p-8 text-lg">
+            <div class="overflow-hidden rounded-lg map_height p-8 ">
+              <p class="text-lg">
                 Metro Vancouver subjects ranked safety on transit and safety in their community a 7/10,
                  with most reporting that safety in their community has gotten worse over time.
               </p>
+              <div class="min-w-[35%] mt-12 flex justify-center">{{ age_range }}</div>
             </div>
         </div>
       </div>
-      <div class="w-2/3 flex justify-between items-center px-6 mx-10 mr-50">
-        <div class="min-w-[35%]">{{ age_range }}</div>
-        <div class="">{{ survey_question }}</div>
+
+      <div class="w-full grid lg:grid-cols-3">
+        <div class="lg:col-span-2"></div>
+        <div class="px-8 flex justify-center"> {{ survey_question }}</div>
       </div>
+      
   </div>
   </section>
 
