@@ -1348,6 +1348,10 @@ html, body {
 }
 
 @media (min-width: 640px) {
+  .sm\:ml-5 {
+    margin-left: 1.25rem;
+  }
+
   .sm\:max-w-sm {
     max-width: 24rem;
   }
@@ -1381,6 +1385,26 @@ html, body {
   .md\:my-44 {
     margin-top: 11rem;
     margin-bottom: 11rem;
+  }
+
+  .md\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .md\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .md\:ml-14 {
+    margin-left: 3.5rem;
+  }
+
+  .md\:ml-36 {
+    margin-left: 9rem;
+  }
+
+  .md\:ml-16 {
+    margin-left: 4rem;
   }
 
   .md\:block {
