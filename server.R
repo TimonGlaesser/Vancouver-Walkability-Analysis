@@ -45,7 +45,6 @@ server <- function(input, output) {
                                title = "Collisions",
                                opacity = 0.8,
                                decreasing = TRUE)
-        
       } else {
         
         crash %>%
@@ -67,7 +66,7 @@ server <- function(input, output) {
                   color = ~pal(census_data$pred_change_pop40),
                   stroke = FALSE,
                   fillOpacity = .75,
-                  label = ~census_data$walk_score) %>%
+                  label = ~census_data$pred_change_pop40) %>%
       addLegend_decreasing("bottomright", pal = pal, values = ~pred_change_pop40,
                            title = "% Growth",
                            opacity = 0.8,
