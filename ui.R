@@ -4,34 +4,6 @@ ui = shiny::htmlTemplate(
   # Index Page
   "www/index.html",
   
-  # # City Selector
-  # city_selector = selectInput(
-  #   "city", 
-  #   label = "Select City", 
-  #   choices = d_clean$city %>% 
-  #     unique(),
-  #   selected = "Auckland"
-  # ),
-  
-  
-  # Selector for Time
-  # time_selector = material_card(
-  #   title = "",
-  #   sliderInput(
-  #     "time", 
-  #     "Date",
-  #     min(d_routes$request_time) %>% as.Date(), 
-  #     max(d_routes$request_time) %>% as.Date(),
-  #     value = max(d_routes$request_time) %>% as.Date(),
-  #     step = 30,
-  #     animate = animationOptions(
-  #       playButton = HTML("<img src='images/icons/play-button.png' height='20' width='20'>"), 
-  #       pauseButton = HTML("<img src='images/icons/pause-button.png' height='20' width='20'>")
-  #     )
-  #   )
-  # ),
-  
-  # Leaflet map
   walk_score_map = leafletOutput(outputId = "walk_score_map") %>% 
     withSpinner(color="#0dc5c1"),
   
@@ -41,15 +13,11 @@ ui = shiny::htmlTemplate(
   collision_map = leafletOutput(outputId = "collision_map") %>% 
     withSpinner(color="#0dc5c1"),
 
-  
   crime_map = leafletOutput(outputId = "crime_map") %>% 
     withSpinner(color="#0dc5c1"),
   
   collision_plot = plotlyOutput(outputId = "collision_plot") %>% 
     withSpinner(color="#0dc5c1"),
-  
-  
-  #DTOutput("walkReg")
   
   walk_plot = plotOutput(outputId = "walk_plot") %>% 
     withSpinner(color="#0dc5c1"),
@@ -68,8 +36,6 @@ ui = shiny::htmlTemplate(
                           value = c(min(gender_survey$Age, na.rm = TRUE), max(gender_survey$Age, na.rm = TRUE)),
                           width = "80%",  # Adjust the width as needed
                           step = 5),
-  
-  
   
   city_plot = plotOutput("city_plot") %>% 
     withSpinner(color="#0dc5c1"),
