@@ -52,3 +52,10 @@ html, body {
     background-color: #F2F2F2;
     color: #3876F2;
 }
+
+.centered-section {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    justify-items: center;
+    margin-top: 15rem/* 240px */;
+}

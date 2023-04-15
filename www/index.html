@@ -145,11 +145,10 @@
 
 <!---------------------- SECTION: KEY STATS + IMAGE ---------------------->
 
-    <section id="2" class="pt-20 mt-40">
-      <h1 class="font-bold text-3xl text-center">
-
-    </h1>
-      <div class="ml-32 mr-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8 flex justify-between">
+  <section id="2" class="pt-20 centered-section">
+    <div class="max-w-3xl lg:max-w-7xl lg:px-8">
+      <h1 class=""><!-- h1 currently used as indicator for left side navbar. Depreciate in future --></h1>
+      <div class="mr-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8 flex justify-between">
         <div class="w-96">
           <div class="lg:flex lg:flex-auto lg:justify-center">
             <dl class="w-64 space-y-8 xl:w-80">
@@ -173,30 +172,31 @@
         <img class="w-3/5" src="http://media.bizj.us/view/img/11366585/screen-shot-2019-06-28-at-34721-pm.png">
       </div>
 
-     
-      <div class="w-full px-0 mt-24">
-        <div class="p-6 bg-white-2 rounded-lg mx-28">
-          <p> For a city to be walkable, pedestrians need to feel safe throughout
-            their commute. Measures such as traffic calming, wide sidewalks and controlled 
-            intersections make this possible.</p><br>
-         <p class="text-sm">
-           <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle" class="italic">
-             <sup>1</sup>Average yearly quantity of CO<sub>2</sub> produced per passenger vehicle, <ins class="text-blue-2">Retrieved from US EPA</ins></a>
-             <br>
-             Calculated as reduction in yearly carbon emmissions expected if all areas 
-             of City of Vancouver had a <a href="https://www.walkscore.com/how-it-works/">Walk Score&reg;</a> 
-             of at least 75 in 2021
-         </p>
-        </div>
+      <div class="p-6 bg-white-2 rounded-lg mt-24">
+        <p> For a city to be walkable, pedestrians need to feel safe throughout
+          their commute. Measures such as traffic calming, wide sidewalks and controlled 
+          intersections make this possible.
+        </p><br>
+        <p class="text-sm">
+          <a href="https://www.epa.gov/greenvehicles/greenhouse-gas-emissions-typical-passenger-vehicle" class="italic">
+            <sup>1</sup>Average yearly quantity of CO<sub>2</sub> produced per passenger vehicle, <ins class="text-blue-2">Retrieved from US EPA</ins>
+          </a><br>
+          Calculated as reduction in yearly carbon emmissions expected if all areas 
+          of City of Vancouver had a <a href="https://www.walkscore.com/how-it-works/">Walk Score&reg;</a> 
+          of at least 75 in 2021
+        </p>
       </div>
 
+
+      
+
     </div>
-    </section>
+  </section>
 
 <!---------------------- SECTION: WALK SCORE MAP ---------------------->
 
-    <section id="3">
-    <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <section id="3" class="centered-section">
+    <div class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 class="font-bold text-3xl text-center py-20">
               <a href="https://www.walkscore.com/how-it-works/">Walk Score&reg;</a> Ranking Across the City of Vancouver
             </h1>
@@ -232,8 +232,8 @@
 
 <!---------------------- SECTION: WAlKING ~ WALK SCORE PLOT ---------------------->
 
-    <section id="4">
-    <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+    <section id="4" class="centered-section">
+    <div class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
             <h1 class="font-bold text-3xl text-center py-20">
                 Correlation between <a href="https://www.walkscore.com/how-it-works/">Walk Score&reg;</a> and Proportion of Population Walking
             </h1>
@@ -271,22 +271,23 @@
 
 <!---------------------- SECTION: COLLISION MAP ---------------------->
 
-<section id="5">
-  <div x-data="{ activeTab: 'census' }" class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
-          <h1 class="font-bold text-3xl text-center py-20">
-              Vehicle Collisions  Across the City of Vancouver in 2022
-          </h1>
+ <section id="5" class="centered-section">
+    <div x-data="{ activeTab: 'census' }" class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+
+      <h1 class="font-bold text-3xl text-center py-20">
+        Vehicle Collisions  Across the City of Vancouver in 2022
+      </h1>
+
       <!-- Main 3 column grid -->
       <div class="grid grid-cols-1 items-start lg:grid-cols-3">
         <!-- Left column -->
         <div class="grid grid-cols-1 lg:col-span-2">
           <div class="overflow-hidden rounded-l-lg bg-blue-2 shadow p-2 map_height">
 
-               <div class="bg-blue-1"> 
-                {{ collision_map }}     
-                <!--<img src="./images/collision_map_2.png">-->
-               </div>
-
+            <div class="bg-blue-1"> 
+              {{ collision_map }}     
+              <!--<img src="./images/collision_map_2.png">-->
+            </div>
 
           </div>
         </div>
@@ -297,24 +298,24 @@
          <a x-on:click.prevent="activeTab = 'census'" :class="{ 'button-active': activeTab === 'census' }" href="#census" 
          class="button overflow-hidden rounded-r-lg h-52">
 
-              <div class="p-8 text-lg action-button cursor-pointer" id="map_1_button"> 
-                <span class="font-semibold">Census Tract Collision Map</span><br>  
-                <p class="text-gray-1 mt-2 text-base">
-                  Static overview showing number of collisions per 5000 people in each census tract.
-                </p>       
-              </div>
+            <div class="p-8 text-lg action-button cursor-pointer" id="map_1_button"> 
+              <span class="font-semibold">Census Tract Collision Map</span><br>  
+              <p class="text-gray-1 mt-2 text-base">
+                Static overview showing number of collisions per 5000 people in each census tract.
+              </p>       
+            </div>
 
           </a>
 
           <a x-on:click.prevent="activeTab = 'cluster'" :class="{ 'button-active': activeTab === 'cluster' }" href="#cluster" 
           class="button overflow-hidden rounded-r-lg h-52">  
 
-              <div class="p-8 text-lg action-button cursor-pointer" id="map_2_button">
-                <span class="font-semibold">Clustered Collision Map</span><br>
-                <p class="text-gray-1 mt-2 text-base">
-                  Interactive clustering of absolute crash counts and their locations.<br> Try zooming in!
-                </p>
-              </div>
+            <div class="p-8 text-lg action-button cursor-pointer" id="map_2_button">
+              <span class="font-semibold">Clustered Collision Map</span><br>
+              <p class="text-gray-1 mt-2 text-base">
+                Interactive clustering of absolute crash counts and their locations.<br> Try zooming in!
+              </p>
+            </div>
 
           </a>
 
@@ -322,7 +323,7 @@
       </div>
 
       <div class="w-full px-0 mt-16">
-        <div class="p-6 bg-white-2 rounded-lg mx-28">
+        <div class="p-6 bg-white-2 rounded-lg">
           <p>
             For a city to be walkable, pedestrians need to feel safe throughout their commute.
             Measures such as traffic calming, wide sidewalks and controlled intersections will
@@ -337,8 +338,8 @@
 
 <!---------------------- SECTION: PERSONAL SAFETY PLOTS 1 ---------------------->
 
-<section id="6">
-  <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+<section id="6" class="centered-section">
+  <div class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
           <h1 class="font-bold text-3xl text-center py-20">
              How Safe Do You Feel in Your City
           </h1>
@@ -377,8 +378,8 @@
 
 <!---------------------- SECTION: PERSONAL SAFETY PLOTS 2 ---------------------->
 
-<section id="7">
-  <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+<section id="7" class="centered-section">
+  <div class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <h1 class="font-bold text-3xl text-center py-20">
       Gender Differences in Perception of Safety
   </h1>
@@ -410,46 +411,46 @@
 
   <!---------------------- SECTION: WALKABLE CITY IMAGE + QUOTE + TEXT ---------------------->
 
-  <section id="8">
-    <div class="mt-60">
-    <h1 class="font-bold text-3xl text-center py-20">
-      Connecting Walkable Communities through Transit
-    </h1>
-    <div class="ml-32 pt-0 mr-8 px-4 sm:px-6 lg:max-w-7xl lg:px-8 flex justify-between">
-      <div class="w-96">
-        <div class="lg:flex lg:flex-auto lg:justify-center">
-          <p class="text-2xl italic justify-center">
+  <section id="8" class="centered-section">
+    <div class="max-w-3xl lg:max-w-7xl lg:px-8">
+
+      <h1 class="font-bold text-3xl text-center py-20">
+        Connecting Walkable Communities through Transit
+      </h1>
+
+      <div class="lg:max-w-7xl flex justify-between">
+
+        <div class="flex justify-center w-full">
+          <p class="text-2xl italic w-96">
             “Even if individual neighborhoods are walkable,
             if they are disconnected from one another and
             people still have to drive to get around, the
             overall walkability of the city is limited." <br><br>
             - Jeff Speck (renowned urban planner)
           </p>
+        </div>
 
+        <img class="w-3/5" src="./images/transit.png">
 
-        
+      </div>
+
+      <div class="w-full px-0 mt-16">
+        <div class="p-6 bg-white-2 rounded-lg">
+          <p>
+            Accessible transit allows for the connection of one walkable census tract to another. 
+            Connectivity of walkable census tracts throughout Vancouver allows people to commute in a
+            way where they can start and end their journeys on foot. 
+          </p>
         </div>
       </div>
-      <img class="w-3/5" src="./images/transit.png">
-    </div>
-
-    <div class="w-full px-0 mt-16">
-      <div class="p-6 bg-white-2 rounded-lg mx-28">
-        <p>
-          Accessible transit allows for the connection of one walkable census tract to another. 
-          Connectivity of walkable census tracts throughout Vancouver allows people to commute in a
-         way where they can start and end their journeys on foot. 
-        </p>
-      </div>
-    </div>
     
     </div>
   </section>
 
 <!---------------------- SECTION: POPULATION PROJECTION ---------------------->
 
-  <section id="9">
-    <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+  <section id="9" class="centered-section">
+    <div class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
         <h1 class="font-bold text-3xl text-center py-20">
         Population Growth Projection for the City of Vancouver 2023-2040
         </h1>
@@ -486,27 +487,27 @@
     </section>
 
 <!---------------------- SECTION: RECOMMENDATION ----------------------> 
-<section id="10">
-  <div class="ml-24 mt-60 max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+<section id="10" class="centered-section">
+  <div class="max-w-3xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
     <h1 class="font-bold text-3xl text-center py-20">
       Steps for Building a More Walkable City
-  </h1>
-  <img src="./images/rec.png">
+    </h1>
 
-    <div class="w-full px-0 mt-20">
-      <div class="p-6 bg-white-2 rounded-lg mx-28">
+    <img src="./images/rec.png">
+
+    <div class="w-full mt-20">
+      <div class="p-6 bg-white-2 rounded-lg">
         <p>
-          To enhance walkability we suggest the following recommendations. 
-      First, effective walkability involves the consultation of community members. 
-      The city should then consider rezoning areas to allow for more mixed use buildings. 
-      Incentivizing these developments in key areas will also help to achieve this vision. 
-      All of this cannot be done without ensuring safe pedestrian infrastructure that makes 
-      urban mobility equitable for minority groups. The final piece of the puzzle involves 
-      accessible transportation to connect walkable communities together, creating a cohesive, walkable city. 
+        To enhance walkability we suggest the following recommendations. 
+        First, effective walkability involves the consultation of community members. 
+        The city should then consider rezoning areas to allow for more mixed use buildings. 
+        Incentivizing these developments in key areas will also help to achieve this vision. 
+        All of this cannot be done without ensuring safe pedestrian infrastructure that makes 
+        urban mobility equitable for minority groups. The final piece of the puzzle involves 
+        accessible transportation to connect walkable communities together, creating a cohesive, walkable city. 
         </p>
       </div>
     </div>
-
 
   </div>
 </section>
