@@ -18,7 +18,10 @@ module.exports = {
       3: '#36ABD9',
       4: '#30BFBF',
       5: '#32D9BA'
-    } 
+    }, 
+    yellow: {
+      1: '#EED202'
+    }
   },
   
   fontFamily: {
