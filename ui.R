@@ -2,7 +2,7 @@
 
 ui = shiny::htmlTemplate(
   # Index Page
-  "www/index.html",
+  "./index.html",
   
   walk_score_map = leafletOutput(outputId = "walk_score_map") %>% 
     withSpinner(color="#0dc5c1"),
